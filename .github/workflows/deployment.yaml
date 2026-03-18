@@ -30,14 +30,6 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Create .env file
-        run: |
-          touch .env
-          echo API_URL=${{ secrets.API_URL }} >> .env
-          echo API_KEY=${{ secrets.API_KEY }} >> .env
-          echo WEB_URL="https://croustillant.menu" >> .env
-          cat .env
-
       - name: Extract version from package.json
         id: get_version
         run: |
@@ -68,9 +60,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          build-args: |
-            WEB_URL=${{ secrets.WEB_URL }}
-            API_URL=${{ secrets.API_URL }}
 
       - name: Generate artifact attestation
         uses: actions/attest-build-provenance@v2
