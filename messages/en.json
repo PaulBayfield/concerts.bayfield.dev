@@ -1,0 +1,132 @@
+{
+  "HomePage": {
+    "title": "My Concerts",
+    "concerts": "Concerts",
+    "showPanel": "Concerts",
+    "hidePanel": "Close"
+  },
+  "Navigation": {
+    "main": "Navigation",
+    "map": "Map",
+    "artists": "Artists",
+    "concerts": "Concerts"
+  },
+  "Map": {
+    "loading": "Loading map...",
+    "concerts": "{count, plural, one {concert} other {concerts}}"
+  },
+  "Concerts": {
+    "title": "Concerts",
+    "search": "Search a concert...",
+    "count": "{count} concert{count, plural, one {} other {s}}",
+    "noResults": "No concerts found",
+    "unknownYear": "Unknown date",
+    "editTitle": "Edit concert",
+    "editSave": "Save",
+    "editSuccess": "Concert updated",
+    "editError": "Failed to update concert",
+    "deleteConfirm": "Delete concert?",
+    "deleteDescription": "This concert will be permanently deleted.",
+    "deleteCancel": "Cancel",
+    "deleteConfirmButton": "Delete",
+    "deleteSuccess": "Concert deleted",
+    "deleteError": "Failed to delete concert"
+  },
+  "Artists": {
+    "title": "Artists",
+    "search": "Search an artist...",
+    "count": "{count} artist{count, plural, one {} other {s}}",
+    "noResults": "No artists found",
+    "seenAt": "Seen at",
+    "nameLabel": "Name",
+    "editTitle": "Edit artist",
+    "editSave": "Save",
+    "editSuccess": "Artist updated",
+    "editError": "Failed to update artist",
+    "deleteConfirm": "Delete artist?",
+    "deleteDescription": "This artist and all their concerts will be permanently deleted.",
+    "deleteCancel": "Cancel",
+    "deleteConfirmButton": "Delete",
+    "deleteSuccess": "Artist deleted",
+    "deleteError": "Failed to delete artist"
+  },
+  "AddConcert": {
+    "trigger": "Add",
+    "title": "Add a concert",
+    "artist": "Artist",
+    "artistPlaceholder": "Artist name...",
+    "newArtist": "New artist — specify country:",
+    "existingArtist": "Existing artist found",
+    "venue": "Venue",
+    "venuePlaceholder": "Venue name...",
+    "venueCityLabel": "City",
+    "venueCityPlaceholder": "Paris",
+    "venueCountryLabel": "Country",
+    "newVenue": "New venue — fill in the details:",
+    "existingVenue": "Existing venue found",
+    "venueCoordinates": "Coordinates (click on map)",
+    "mapPickerHint": "Click on the map to place the venue",
+    "selectCountry": "Select a country…",
+    "date": "Date",
+    "cancel": "Cancel",
+    "submit": "Add",
+    "success": "Concert added successfully",
+    "error": "Failed to add concert"
+  },
+  "SiteHeader": {
+    "openFilters": "Open filters",
+    "filters": "Filters"
+  },
+  "LanguageSwitcher": {
+    "label": "Language",
+    "switchLanguage": "Switch language"
+  },
+  "Help": {
+    "title": "Help",
+    "description": "This app lets you visualize your concerts on a map and browse the list of artists you have seen. Sign in to add new concerts."
+  },
+  "Sidebar": {
+    "footer": "concerts.bayfield.dev"
+  },
+  "Auth": {
+    "signIn": "Sign in",
+    "signOut": "Sign out",
+    "signInWith": "Sign in with {provider}",
+    "signInWithGoogle": "Sign in with Google",
+    "backToHome": "Back to home"
+  },
+  "Dashboard": {
+    "title": "Dashboard",
+    "account": "My account",
+    "name": "Name",
+    "email": "Email",
+    "authProvider": "Provider",
+    "credits": "Credits",
+    "signOut": "Sign out",
+    "deleteAccount": "Delete account",
+    "deleteConfirm": "Confirm deletion",
+    "deleteDescription": "This action cannot be undone.",
+    "deleteCancel": "Cancel",
+    "deleteConfirmButton": "Delete permanently",
+    "plans": "Plans",
+    "buyCredits": "Buy credits",
+    "starter": "Starter",
+    "pro": "Pro",
+    "explorer": "Explorer"
+  },
+  "Errors": {
+    "NotFound": {
+      "title": "404",
+      "subtitle": "Page not found",
+      "description": "The page you are looking for does not exist or has been moved.",
+      "returnHome": "Back to home"
+    },
+    "General": {
+      "title": "Something went wrong",
+      "subtitle": "Oops!",
+      "description": "Something went wrong. Please try again.",
+      "tryAgain": "Try again",
+      "returnHome": "Back to home"
+    }
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "HomePage": {
+    "title": "Mes Concerts",
+    "concerts": "Concerts",
+    "showPanel": "Concerts",
+    "hidePanel": "Fermer"
+  },
+  "Navigation": {
+    "main": "Navigation",
+    "map": "Carte",
+    "artists": "Artistes",
+    "concerts": "Concerts"
+  },
+  "Map": {
+    "loading": "Chargement de la carte...",
+    "concerts": "{count, plural, one {concert} other {concerts}}"
+  },
+  "Concerts": {
+    "title": "Concerts",
+    "search": "Rechercher un concert...",
+    "count": "{count} concert{count, plural, one {} other {s}}",
+    "noResults": "Aucun concert trouvé",
+    "unknownYear": "Date inconnue",
+    "editTitle": "Modifier le concert",
+    "editSave": "Enregistrer",
+    "editSuccess": "Concert modifié",
+    "editError": "Erreur lors de la modification",
+    "deleteConfirm": "Supprimer le concert ?",
+    "deleteDescription": "Ce concert sera supprimé définitivement.",
+    "deleteCancel": "Annuler",
+    "deleteConfirmButton": "Supprimer",
+    "deleteSuccess": "Concert supprimé",
+    "deleteError": "Erreur lors de la suppression"
+  },
+  "Artists": {
+    "title": "Artistes",
+    "search": "Rechercher un artiste...",
+    "count": "{count} artiste{count, plural, one {} other {s}}",
+    "noResults": "Aucun artiste trouvé",
+    "seenAt": "Vu à",
+    "nameLabel": "Nom",
+    "editTitle": "Modifier l'artiste",
+    "editSave": "Enregistrer",
+    "editSuccess": "Artiste modifié",
+    "editError": "Erreur lors de la modification",
+    "deleteConfirm": "Supprimer l'artiste ?",
+    "deleteDescription": "Cet artiste et tous ses concerts seront supprimés définitivement.",
+    "deleteCancel": "Annuler",
+    "deleteConfirmButton": "Supprimer",
+    "deleteSuccess": "Artiste supprimé",
+    "deleteError": "Erreur lors de la suppression"
+  },
+  "AddConcert": {
+    "trigger": "Ajouter",
+    "title": "Ajouter un concert",
+    "artist": "Artiste",
+    "artistPlaceholder": "Nom de l'artiste...",
+    "newArtist": "Nouvel artiste — préciser le pays :",
+    "existingArtist": "Artiste existant trouvé",
+    "venue": "Salle / Lieu",
+    "venuePlaceholder": "Nom du lieu...",
+    "venueCityLabel": "Ville",
+    "venueCityPlaceholder": "Paris",
+    "venueCountryLabel": "Pays",
+    "newVenue": "Nouveau lieu — renseigner les informations :",
+    "existingVenue": "Lieu existant trouvé",
+    "venueCoordinates": "Coordonnées (cliquer sur la carte)",
+    "mapPickerHint": "Cliquez sur la carte pour placer le lieu",
+    "selectCountry": "Sélectionner un pays…",
+    "date": "Date",
+    "cancel": "Annuler",
+    "submit": "Ajouter",
+    "success": "Concert ajouté avec succès",
+    "error": "Erreur lors de l'ajout du concert"
+  },
+  "SiteHeader": {
+    "openFilters": "Ouvrir les filtres",
+    "filters": "Filtres"
+  },
+  "LanguageSwitcher": {
+    "label": "Langue",
+    "switchLanguage": "Changer de langue"
+  },
+  "Help": {
+    "title": "Aide",
+    "description": "Cette application vous permet de visualiser vos concerts sur une carte et de consulter la liste des artistes que vous avez vus. Connectez-vous pour ajouter de nouveaux concerts."
+  },
+  "Sidebar": {
+    "footer": "concerts.bayfield.dev"
+  },
+  "Auth": {
+    "signIn": "Se connecter",
+    "signOut": "Se déconnecter",
+    "signInWith": "Se connecter avec {provider}",
+    "signInWithGoogle": "Se connecter avec Google",
+    "backToHome": "Retour à l'accueil"
+  },
+  "Dashboard": {
+    "title": "Tableau de bord",
+    "account": "Mon compte",
+    "name": "Nom",
+    "email": "Email",
+    "authProvider": "Fournisseur",
+    "credits": "Crédits",
+    "signOut": "Se déconnecter",
+    "deleteAccount": "Supprimer le compte",
+    "deleteConfirm": "Confirmer la suppression",
+    "deleteDescription": "Cette action est irréversible.",
+    "deleteCancel": "Annuler",
+    "deleteConfirmButton": "Supprimer définitivement",
+    "plans": "Forfaits",
+    "buyCredits": "Acheter des crédits",
+    "starter": "Starter",
+    "pro": "Pro",
+    "explorer": "Explorer"
+  },
+  "Errors": {
+    "NotFound": {
+      "title": "404",
+      "subtitle": "Page introuvable",
+      "description": "La page que vous recherchez n'existe pas ou a été déplacée.",
+      "returnHome": "Retour à l'accueil"
+    },
+    "General": {
+      "title": "Une erreur est survenue",
+      "subtitle": "Oups !",
+      "description": "Quelque chose s'est mal passé. Veuillez réessayer.",
+      "tryAgain": "Réessayer",
+      "returnHome": "Retour à l'accueil"
+    }
+  }
+}
