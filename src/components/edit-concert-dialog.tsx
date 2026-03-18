@@ -137,7 +137,7 @@ export function EditConcertDialog({ concert, venues, artists, onUpdated }: EditC
         </Button>
       </DialogTrigger>
 
-      <DialogContent className="w-full max-w-2xl p-0 gap-0 overflow-hidden">
+      <DialogContent className="w-full max-w-2xl p-0 gap-0 overflow-hidden" aria-describedby={undefined}>
         <DialogHeader className="px-6 pt-6 pb-4 border-b shrink-0">
           <DialogTitle>{tC("editTitle")}</DialogTitle>
         </DialogHeader>

@@ -70,7 +70,7 @@ export function EditArtistDialog({ artist, onUpdated }: EditArtistDialogProps) {
         </Button>
       </DialogTrigger>
 
-      <DialogContent className="max-w-sm">
+      <DialogContent className="max-w-sm" aria-describedby={undefined}>
         <DialogHeader>
           <DialogTitle>{t("editTitle")}</DialogTitle>
         </DialogHeader>

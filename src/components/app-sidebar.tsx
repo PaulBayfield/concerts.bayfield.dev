@@ -8,6 +8,7 @@ import {
   IconMap2,
   IconMicrophone2,
   IconCalendar,
+  IconShield,
 } from "@tabler/icons-react";
 import { Music } from "lucide-react";
 
@@ -26,7 +27,7 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 
-export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+export function AppSidebar({ isAdmin, ...props }: React.ComponentProps<typeof Sidebar> & { isAdmin?: boolean }) {
   const pathname = usePathname();
   const t = useTranslations('Navigation');
 
@@ -72,6 +73,14 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                   <span>{t("concerts")}</span>
                 </SidebarMenuButton>
               </Link>
+              {isAdmin && (
+                <Link href="/admin">
+                  <SidebarMenuButton tooltip={t("admin")} isActive={pathname === "/admin"}>
+                    <IconShield />
+                    <span>{t("admin")}</span>
+                  </SidebarMenuButton>
+                </Link>
+              )}
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>

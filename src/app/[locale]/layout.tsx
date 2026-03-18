@@ -57,7 +57,7 @@ export default async function LocaleLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}>
         <NextIntlClientProvider messages={messages}>
           <Providers defaultOpen={defaultOpen} session={session}>
-            <AppSidebar variant="inset" />
+            <AppSidebar variant="inset" isAdmin={session?.user?.email === process.env.ADMIN_EMAIL && !!process.env.ADMIN_EMAIL} />
             <SidebarInset className="flex flex-1 flex-col">
               {children}
             </SidebarInset>

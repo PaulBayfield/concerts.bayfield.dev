@@ -5,6 +5,7 @@ import { SidebarMenuButton } from "@/components/ui/sidebar"
 import {
   Dialog,
   DialogContent,
+  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -25,10 +26,8 @@ export default function HelpDialog() {
       <DialogContent>
         <DialogHeader>
           <DialogTitle>{t("title")}</DialogTitle>
+          <DialogDescription>{t("description")}</DialogDescription>
         </DialogHeader>
-        <div className="space-y-3 text-sm text-muted-foreground">
-          <p>{t("description")}</p>
-        </div>
       </DialogContent>
     </Dialog>
   )

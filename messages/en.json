@@ -9,7 +9,8 @@
     "main": "Navigation",
     "map": "Map",
     "artists": "Artists",
-    "concerts": "Concerts"
+    "concerts": "Concerts",
+    "admin": "Admin"
   },
   "Map": {
     "loading": "Loading map...",
@@ -115,6 +116,23 @@
     "starter": "Starter",
     "pro": "Pro",
     "explorer": "Explorer"
+  },
+  "Admin": {
+    "title": "Admin",
+    "totalUsers": "Users",
+    "totalConcerts": "Concerts",
+    "totalArtists": "Artists",
+    "totalVenues": "Venues",
+    "usersSection": "Users",
+    "noUsers": "No users yet",
+    "unattributed": "Seed / unattributed",
+    "concerts": "concerts",
+    "artists": "artists",
+    "venues": "venues",
+    "date": "Date",
+    "artist": "Artist",
+    "venue": "Venue",
+    "city": "City"
   },
   "Errors": {
     "NotFound": {
