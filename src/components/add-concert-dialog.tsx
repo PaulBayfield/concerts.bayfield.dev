@@ -71,7 +71,7 @@ export function AddConcertDialog({ venues, artists, onConcertAdded }: AddConcert
     setDate("")
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: { preventDefault(): void }) => {
     e.preventDefault()
     if (!artistQuery.trim() || !venueQuery.trim() || !date) return
     setLoading(true)
@@ -166,7 +166,7 @@ export function AddConcertDialog({ venues, artists, onConcertAdded }: AddConcert
                   <CountrySelect
                     value={artistCountry}
                     onChange={setArtistCountry}
-                    placeholder={t("selectCountry")}
+                    placeholder={t("artistNationality")}
                   />
                 </div>
               ) : null}
@@ -227,7 +227,7 @@ export function AddConcertDialog({ venues, artists, onConcertAdded }: AddConcert
                   </div>
                   <div className="space-y-1.5">
                     <Label className="text-xs">{t("venueCoordinates")}</Label>
-                    <VenueMapPicker lat={venueLat} lng={venueLng} onChange={(lat, lng) => { setVenueLat(lat); setVenueLng(lng) }} />
+                    <VenueMapPicker lat={venueLat} lng={venueLng} onChange={(lat, lng) => { setVenueLat(lat); setVenueLng(lng) }} searchHint={[venueQuery, venueCity].filter(Boolean).join(" ")} />
                   </div>
                 </div>
               ) : null}

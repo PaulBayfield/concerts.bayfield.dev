@@ -81,7 +81,7 @@ export function EditConcertDialog({ concert, venues, artists, onUpdated }: EditC
     setOpen(v)
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: { preventDefault(): void }) => {
     e.preventDefault()
     if (!artistQuery.trim() || !venueQuery.trim() || !date) return
     setLoading(true)
@@ -225,7 +225,7 @@ export function EditConcertDialog({ concert, venues, artists, onUpdated }: EditC
                   </div>
                   <div className="space-y-1.5">
                     <Label className="text-xs">{t("venueCoordinates")}</Label>
-                    <VenueMapPicker lat={venueLat} lng={venueLng} onChange={(lat, lng) => { setVenueLat(lat); setVenueLng(lng) }} />
+                    <VenueMapPicker lat={venueLat} lng={venueLng} onChange={(lat, lng) => { setVenueLat(lat); setVenueLng(lng) }} searchHint={[venueQuery, venueCity].filter(Boolean).join(" ")} />
                   </div>
                 </div>
               )}

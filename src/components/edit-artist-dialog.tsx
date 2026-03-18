@@ -38,7 +38,7 @@ export function EditArtistDialog({ artist, onUpdated }: EditArtistDialogProps) {
     setOpen(v)
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: { preventDefault(): void }) => {
     e.preventDefault()
     if (!name.trim()) return
     setLoading(true)
@@ -81,7 +81,7 @@ export function EditArtistDialog({ artist, onUpdated }: EditArtistDialogProps) {
             <Input value={name} onChange={e => setName(e.target.value)} required />
           </div>
           <div className="space-y-2">
-            <Label>{tA("venueCountryLabel")}</Label>
+            <Label>{tA("artistNationality")}</Label>
             <CountrySelect value={country} onChange={setCountry} placeholder={tA("selectCountry")} />
           </div>
           <div className="flex justify-end gap-2 pt-2">
