@@ -6,6 +6,20 @@ const isProd = process.env.ENV === "production";
 export const authOptions: NextAuthOptions = {
   secret: process.env.NEXTAUTH_SECRET,
   useSecureCookies: isProd,
+  cookies: {
+    sessionToken: {
+      name: `${isProd ? "__Secure-" : ""}${process.env.COOKIE_PREFIX}-next-auth.session-token`,
+      options: { httpOnly: true, sameSite: "lax", path: "/", secure: isProd },
+    },
+    callbackUrl: {
+      name: `${isProd ? "__Secure-" : ""}${process.env.COOKIE_PREFIX}-next-auth.callback-url`,
+      options: { sameSite: "lax", path: "/", secure: isProd },
+    },
+    csrfToken: {
+      name: `${process.env.COOKIE_PREFIX}-next-auth.csrf-token`,
+      options: { httpOnly: true, sameSite: "lax", path: "/", secure: isProd },
+    },
+  },
   session: {
     strategy: "jwt",
   },
