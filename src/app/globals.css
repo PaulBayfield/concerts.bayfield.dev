@@ -1,7 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
-@import "leaflet/dist/leaflet.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -127,29 +126,6 @@
   }
 }
 
-.leaflet-pane,
-.leaflet-top,
-.leaflet-bottom {
-  z-index: 0 !important;
-}
-
 body {
   scroll-behavior: smooth;
-}
-
-.dark .leaflet-container {
-  background-color: var(--background);
-}
-
-.dark .leaflet-tile-pane,
-.dark .leaflet-popup {
-  filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
-}
-
-.dark .leaflet-marker-icon {
-  filter: invert(10%) brightness(100%) contrast(100%);
-}
-
-.dark .marker-cluster {
-  filter: invert(100%) hue-rotate(180deg) brightness(200%) contrast(80%);
 }
