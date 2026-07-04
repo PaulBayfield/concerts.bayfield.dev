@@ -3,12 +3,14 @@ import GoogleProvider from "next-auth/providers/google"
 
 const isProd = process.env.ENV === "production";
 
+export const sessionCookieName = `${isProd ? "__Secure-" : ""}${process.env.COOKIE_PREFIX}-next-auth.session-token`;
+
 export const authOptions: NextAuthOptions = {
   secret: process.env.NEXTAUTH_SECRET,
   useSecureCookies: isProd,
   cookies: {
     sessionToken: {
-      name: `${isProd ? "__Secure-" : ""}${process.env.COOKIE_PREFIX}-next-auth.session-token`,
+      name: sessionCookieName,
       options: { httpOnly: true, sameSite: "lax", path: "/", secure: isProd },
     },
     callbackUrl: {
