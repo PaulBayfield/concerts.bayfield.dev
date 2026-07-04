@@ -40,7 +40,7 @@ export function AppSidebar({ isAdmin, ...props }: React.ComponentProps<typeof Si
               asChild
               className="data-[slot=sidebar-menu-button]:!p-1.5"
             >
-              <Link href="/">
+              <Link href="/map">
                 <Music className="h-5 w-5" />
                 <span className="text-base font-semibold">
                   Concerts
@@ -55,8 +55,8 @@ export function AppSidebar({ isAdmin, ...props }: React.ComponentProps<typeof Si
           <SidebarGroupLabel>{t("main")}</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu className="flex flex-col gap-1">
-              <Link href="/">
-                <SidebarMenuButton tooltip={t("map")} isActive={pathname === "/"}>
+              <Link href="/map">
+                <SidebarMenuButton tooltip={t("map")} isActive={pathname === "/map"}>
                   <IconMap2 />
                   <span>{t("map")}</span>
                 </SidebarMenuButton>

@@ -1,5 +1,12 @@
 {
-  "HomePage": {
+  "Home": {
+    "title": "Gardez une trace de tous vos concerts",
+    "description": "Enregistrez les concerts auxquels vous avez assisté, suivez les artistes et les salles, et visualisez le tout sur une carte.",
+    "featureMap": "Visualisez chaque salle sur une carte interactive",
+    "featureArtists": "Gardez un historique de chaque artiste vu",
+    "featureConcerts": "Parcourez vos concerts par date"
+  },
+  "MapPage": {
     "title": "Mes Concerts",
     "concerts": "Concerts",
     "showPanel": "Concerts",

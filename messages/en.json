@@ -1,5 +1,12 @@
 {
-  "HomePage": {
+  "Home": {
+    "title": "Track every concert you've been to",
+    "description": "Log the concerts you've attended, keep track of the artists and venues, and see it all on a map.",
+    "featureMap": "Visualize every venue on an interactive map",
+    "featureArtists": "Keep a history of every artist you've seen",
+    "featureConcerts": "Browse your concerts by date"
+  },
+  "MapPage": {
     "title": "My Concerts",
     "concerts": "Concerts",
     "showPanel": "Concerts",

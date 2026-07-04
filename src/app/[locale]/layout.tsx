@@ -6,8 +6,7 @@ import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 
-import { AppSidebar } from "@/components/app-sidebar";
-import { SidebarInset } from "@/components/ui/sidebar";
+import { AppShell } from "@/components/app-shell";
 
 import { Providers } from "./providers";
 
@@ -57,10 +56,9 @@ export default async function LocaleLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}>
         <NextIntlClientProvider messages={messages}>
           <Providers defaultOpen={defaultOpen} session={session}>
-            <AppSidebar variant="inset" isAdmin={session?.user?.email === process.env.ADMIN_EMAIL && !!process.env.ADMIN_EMAIL} />
-            <SidebarInset className="flex flex-1 flex-col">
+            <AppShell isAdmin={session?.user?.email === process.env.ADMIN_EMAIL && !!process.env.ADMIN_EMAIL}>
               {children}
-            </SidebarInset>
+            </AppShell>
           </Providers>
         </NextIntlClientProvider>
       </body>

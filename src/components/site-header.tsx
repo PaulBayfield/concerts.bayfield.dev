@@ -10,7 +10,15 @@ import { useTranslations } from "next-intl"
 import { LanguageSwitcher } from "@/components/language-switcher"
 import { UserNav } from "@/components/user-nav"
 
-export function SiteHeader({ pageTitle, children }: { pageTitle?: string; children?: ReactNode }) {
+export function SiteHeader({
+  pageTitle,
+  children,
+  showSidebarTrigger = true,
+}: {
+  pageTitle?: string
+  children?: ReactNode
+  showSidebarTrigger?: boolean
+}) {
   const t = useTranslations("SiteHeader")
 
   return (
@@ -26,11 +34,15 @@ export function SiteHeader({ pageTitle, children }: { pageTitle?: string; childr
       "
     >
       <div className="flex w-full items-center gap-1 px-4 lg:gap-2 lg:px-6">
-        <SidebarTrigger className="-ml-1" />
-        <Separator
-          orientation="vertical"
-          className="mx-2 data-[orientation=vertical]:h-full"
-        />
+        {showSidebarTrigger && (
+          <>
+            <SidebarTrigger className="-ml-1" />
+            <Separator
+              orientation="vertical"
+              className="mx-2 data-[orientation=vertical]:h-full"
+            />
+          </>
+        )}
         <h1 className="text-base font-medium -ml-5 md:-ml-0">{pageTitle}</h1>
         <div className="ml-auto flex items-center gap-2">
           {children}
