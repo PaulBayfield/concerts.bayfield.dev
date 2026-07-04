@@ -4,7 +4,10 @@
     "description": "Log the concerts you've attended, keep track of the artists and venues, and see it all on a map.",
     "featureMap": "Visualize every venue on an interactive map",
     "featureArtists": "Keep a history of every artist you've seen",
-    "featureConcerts": "Browse your concerts by date"
+    "featureConcerts": "Browse your concerts by date",
+    "demoCta": "Try the live demo",
+    "demoBanner": "Sample data — sign in to track your own concerts.",
+    "openSource": "This project is open source • view it on GitHub"
   },
   "MapPage": {
     "title": "My Concerts",

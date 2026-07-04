@@ -1,7 +1,10 @@
 import { getTranslations } from "next-intl/server"
-import { Music, MapPin, Mic2, CalendarDays } from "lucide-react"
+import { Music, MapPin, Mic2, CalendarDays, Github } from "lucide-react"
 import { SiteHeader } from "@/components/site-header"
 import { SignInForm } from "@/components/auth/signin-form"
+import { DemoPreview } from "@/components/demo-preview"
+
+const GITHUB_URL = "https://github.com/PaulBayfield/concerts.bayfield.dev"
 
 export default async function HomePage() {
   const t = await getTranslations("Home")
@@ -10,7 +13,7 @@ export default async function HomePage() {
     <>
       <SiteHeader pageTitle={t("title")} showSidebarTrigger={false} />
 
-      <div className="flex-1 relative flex flex-col items-center justify-center overflow-hidden px-6 py-12">
+      <div className="flex-1 relative flex flex-col items-center justify-center overflow-x-hidden overflow-y-auto px-6 py-12">
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
 
@@ -41,9 +44,20 @@ export default async function HomePage() {
             </li>
           </ul>
 
-          <div className="w-full pt-2">
+          <div className="w-full pt-2 space-y-3">
             <SignInForm />
+            <DemoPreview />
           </div>
+
+          <a
+            href={GITHUB_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <Github className="h-4 w-4" />
+            {t("openSource")}
+          </a>
         </div>
       </div>
     </>
