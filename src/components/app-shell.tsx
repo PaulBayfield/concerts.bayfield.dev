@@ -21,7 +21,8 @@ export function AppShell({
   const pathname = usePathname()
 
   if (pathname === "/") {
-    return <main className="flex w-full flex-1 flex-col min-w-0">{children}</main>
+    // Fixed to the viewport: the page content scrolls under the header instead of the window
+    return <main className="flex w-full flex-1 flex-col min-w-0 h-svh overflow-hidden">{children}</main>
   }
 
   return (
