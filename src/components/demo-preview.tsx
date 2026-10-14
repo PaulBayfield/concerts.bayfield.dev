@@ -15,20 +15,21 @@ import {
 } from "@/components/ui/dialog"
 import { ConcertsPanel } from "@/components/concerts-panel"
 import { demoVenues, demoConcerts } from "@/lib/demo-data"
+import { cn } from "@/utils/utils"
 
 const ConcertMap = dynamic(
   () => import("@/components/concert-map").then((m) => m.ConcertMap),
   { ssr: false, loading: () => <Skeleton className="h-full w-full rounded-lg" /> }
 )
 
-export function DemoPreview() {
+export function DemoPreview({ className }: { className?: string }) {
   const t = useTranslations("Home")
   const [selectedVenueId, setSelectedVenueId] = useState<number | null>(null)
 
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button type="button" variant="outline" className="w-full h-11 gap-2">
+        <Button type="button" variant="outline" className={cn("w-full h-11 gap-2", className)}>
           <Eye className="h-4 w-4" />
           {t("demoCta")}
         </Button>

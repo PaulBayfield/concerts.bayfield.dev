@@ -56,9 +56,10 @@ export function SiteHeader({
             <>
               <Separator
                 orientation="vertical"
-                className="mx-2 data-[orientation=vertical]:h-full"
+                className="mx-2 data-[orientation=vertical]:h-full hidden md:block"
               />
-              <RightSidebarTrigger className="-mr-1" />
+              {/* Mobile uses the floating panel button instead */}
+              <RightSidebarTrigger className="-mr-1 hidden md:inline-flex" />
             </>
           )}
         </div>

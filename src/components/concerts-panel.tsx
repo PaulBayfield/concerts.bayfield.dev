@@ -146,13 +146,8 @@ export function ConcertsPanel({ concerts, selectedVenueId, onVenueSelect, varian
                           onClick={() => onVenueSelect?.(concert.venue_id)}
                           data-active={active}
                           className={cn(
-                            "w-full text-left transition-colors cursor-pointer",
-                            isSidebar
-                              ? "rounded-md p-2 outline-hidden ring-sidebar-ring focus-visible:ring-2 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground data-[active=true]:bg-sidebar-accent data-[active=true]:text-sidebar-accent-foreground"
-                              : cn(
-                                  "rounded-lg border p-3",
-                                  active ? "border-primary bg-primary/5" : "bg-card hover:bg-accent/50"
-                                )
+                            "w-full text-left transition-colors cursor-pointer rounded-lg border p-3 outline-hidden focus-visible:ring-2 ring-ring",
+                            active ? "border-primary bg-primary/5" : "bg-card hover:bg-accent/50"
                           )}
                         >
                           <div className="flex items-start justify-between gap-2">

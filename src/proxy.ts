@@ -39,9 +39,10 @@ export default async function middleware(req: NextRequest) {
       return intlMiddleware(req)
     }
 
+    // Logged-out users go to the homepage, which hosts the sign-in button
     if (!token) {
       const url = req.nextUrl.clone()
-      url.pathname = `/${locale}/auth/signin`
+      url.pathname = `/${locale}`
       url.searchParams.set("callbackUrl", pathname)
       return NextResponse.redirect(url)
     }
