@@ -16,6 +16,8 @@ import { Label } from "@/components/ui/label"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { useTranslations } from "next-intl"
 import { toast } from "sonner"
+import { cn } from "@/utils/utils"
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
 import { CountrySelect } from "@/components/country-select"
 import type { Venue } from "@/app/api/venues/route"
 import type { ArtistWithConcerts } from "@/app/api/artists/route"
@@ -29,9 +31,11 @@ interface AddConcertDialogProps {
   venues: Venue[]
   artists: ArtistWithConcerts[]
   onConcertAdded: () => void
+  triggerClassName?: string
+  iconOnly?: boolean
 }
 
-export function AddConcertDialog({ venues, artists, onConcertAdded }: AddConcertDialogProps) {
+export function AddConcertDialog({ venues, artists, onConcertAdded, triggerClassName, iconOnly }: AddConcertDialogProps) {
   const t = useTranslations("AddConcert")
   const [open, setOpen] = useState(false)
   const [loading, setLoading] = useState(false)
@@ -117,12 +121,33 @@ export function AddConcertDialog({ venues, artists, onConcertAdded }: AddConcert
 
   return (
     <Dialog open={open} onOpenChange={(v) => { setOpen(v); if (!v) reset() }}>
-      <DialogTrigger asChild>
-        <Button size="sm" className="gap-1.5">
-          <Plus className="h-4 w-4" />
-          {t("trigger")}
-        </Button>
-      </DialogTrigger>
+      {iconOnly ? (
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <DialogTrigger asChild>
+              <Button
+                variant="main"
+                size="icon"
+                className={cn("shadow-sm cursor-pointer active:scale-95", triggerClassName)}
+              >
+                <Plus className="h-4 w-4" />
+                <span className="sr-only">{t("trigger")}</span>
+              </Button>
+            </DialogTrigger>
+          </TooltipTrigger>
+          <TooltipContent side="left">{t("trigger")}</TooltipContent>
+        </Tooltip>
+      ) : (
+        <DialogTrigger asChild>
+          <Button
+            variant="main"
+            className={cn("gap-2 shadow-sm cursor-pointer active:scale-[0.98]", triggerClassName)}
+          >
+            <Plus className="h-4 w-4" />
+            {t("trigger")}
+          </Button>
+        </DialogTrigger>
+      )}
 
       <DialogContent className="w-full max-w-2xl p-0 gap-0 overflow-hidden" aria-describedby={undefined}>
         <DialogHeader className="px-6 pt-6 pb-4 border-b shrink-0">

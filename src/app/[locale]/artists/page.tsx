@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react"
 import { useSession } from "next-auth/react"
 import { SiteHeader } from "@/components/site-header"
+import { useConcertsChanged } from "@/components/quick-add-concert"
 import { EditArtistDialog } from "@/components/edit-artist-dialog"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
@@ -135,6 +136,7 @@ export default function ArtistsPage() {
   }, [])
 
   useEffect(() => { fetchArtists() }, [fetchArtists])
+  useConcertsChanged(fetchArtists)
 
   const handleDelete = async (id: number) => {
     try {

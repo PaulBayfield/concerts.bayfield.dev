@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from "react"
 import { useSession } from "next-auth/react"
 import { SiteHeader } from "@/components/site-header"
-import { AddConcertDialog } from "@/components/add-concert-dialog"
+import { useConcertsChanged } from "@/components/quick-add-concert"
 import { EditConcertDialog } from "@/components/edit-concert-dialog"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
@@ -52,6 +52,7 @@ export default function ConcertsPage() {
   }, [])
 
   useEffect(() => { fetchAll() }, [fetchAll])
+  useConcertsChanged(fetchAll)
 
   const handleDelete = async (id: number) => {
     try {
@@ -80,11 +81,7 @@ export default function ConcertsPage() {
 
   return (
     <>
-      <SiteHeader pageTitle={t("title")}>
-        {session && !loading && (
-          <AddConcertDialog venues={venues} artists={artists} onConcertAdded={fetchAll} />
-        )}
-      </SiteHeader>
+      <SiteHeader pageTitle={t("title")} />
       <div className="flex flex-1 flex-col p-6 gap-4 max-w-3xl mx-auto w-full">
         <div className="flex items-center justify-between gap-4">
           <div className="relative flex-1">

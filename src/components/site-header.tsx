@@ -5,6 +5,7 @@ import { ReactNode } from "react"
 import { ModeToggle } from "@/components/mode-toggle"
 import { Separator } from "@/components/ui/separator"
 import { SidebarTrigger } from "@/components/ui/sidebar"
+import { RightSidebarTrigger } from "@/components/right-sidebar"
 
 import { useTranslations } from "next-intl"
 import { LanguageSwitcher } from "@/components/language-switcher"
@@ -14,10 +15,12 @@ export function SiteHeader({
   pageTitle,
   children,
   showSidebarTrigger = true,
+  showRightSidebarTrigger = false,
 }: {
   pageTitle?: string
   children?: ReactNode
   showSidebarTrigger?: boolean
+  showRightSidebarTrigger?: boolean
 }) {
   const t = useTranslations("SiteHeader")
 
@@ -46,9 +49,18 @@ export function SiteHeader({
         <h1 className="text-base font-medium -ml-5 md:-ml-0">{pageTitle}</h1>
         <div className="ml-auto flex items-center gap-2">
           {children}
-          <UserNav />
           <LanguageSwitcher />
           <ModeToggle />
+          <UserNav />
+          {showRightSidebarTrigger && (
+            <>
+              <Separator
+                orientation="vertical"
+                className="mx-2 data-[orientation=vertical]:h-full"
+              />
+              <RightSidebarTrigger className="-mr-1" />
+            </>
+          )}
         </div>
       </div>
     </header>
